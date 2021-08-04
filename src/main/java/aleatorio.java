@@ -1,4 +1,4 @@
-//Joa x Margaret ss
+//Joa x Margaret 
 public class aleatorio  {
     public static void main(String args[]){
        Integer vector1[];
