@@ -1,4 +1,3 @@
-//Joa x Margaret carlosxAnaliasosa
 public class aleatorio  {
     public static void main(String args[]){
         Integer vector1[];
