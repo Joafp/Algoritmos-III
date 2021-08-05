@@ -36,22 +36,26 @@ public class aleatorio  {
         x[j][2]=dato/(tam*(Math.log(tam)/Math.log(2)));
         x[j][3]=dato/(tam*tam);
     }
+    
     public static void cargar_vector(Integer x[]){
         int c;
         for(c=0;c<x.length;c++){
-            x[c]= 1+(int)(Math.random()*10);
+            x[c]= 10000+(int)(Math.random()*1000000);
         }
     }
     public static <T extends Comparable<T>> double lineal(T x[],T numero,int inferior, int superior){
-        long t1, t2;
-        t1 = System.currentTimeMillis();
-        for (int i = inferior; i <= superior; i++) {
-	    if (x[i].compareTo(numero) == 0){
-                t2 = System.currentTimeMillis();
-                return (t2 - t1);
+        int bandera=0;
+        double t1, t2;
+        t1 = System.nanoTime();
+        while (bandera==0){
+            for (int i = inferior; i <= superior; i++) {
+                if (x[i].compareTo(numero) == 0){
+                    bandera=1;
+                }
             }
-	}
-	return -1;
+        }
+        t2 = System.nanoTime();
+        return (t2-t1)*Math.pow(10,-6);
     }
     public static <T extends Comparable<T>> double binario(T x[],T numero){
         int ini=0;
