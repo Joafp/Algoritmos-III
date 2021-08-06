@@ -1,3 +1,4 @@
+//Integrantes Cesar Joaquin Delgado Diaz,Carlos Mateo Ayala Rumich
 public class aleatorio  {//Definimos nuestra clase aleatorio 
     public static void main(String args[]){//El main de nuestro programa
         Integer vector1[];
