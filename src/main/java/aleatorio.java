@@ -82,5 +82,16 @@ public class aleatorio  {//Definimos nuestra clase aleatorio
         return -1;//Si retorna -1 El numero no fue encontrado
     }
 }
-
+/*Luego de realizar el exprimento podemos ver la clara ventaja que tiene la busqueda binaria con respecto a la busqueda lineal, en cuanto a numeros podemos observar que la busqueda lineal
+tarda el doble que una busqueda binaria y que el tiempo de busqueda aumenta muy rapidamente en comparacion a la busqueda binaria.
+De la tabla de busqueda binaria observamos que la columna T/N^2 aumenta progresivamente mientras que en las otras columnas son bastantes irregulares o tienden a un mismo valor
+De la tabla de busqueda lineal vemos que pasa lo mismo la ultima columna es la que aumenta progresivamte, pero en este caso la columna de T/N aumenta mas rapidamente
+En conclusion podemos decir que la busqueda binaria siempre va a ser la mejor opcion para vectores grandes y siempre y cuando podamos con los costos de ordenar el vector, en caso de no estar ordenado
+y que no podemos costear ordenarlo la buqsueda lineal tambien es una opcion, pero debemos estar concientes que va a tardar mucho mas.
+Las pruebas se hicieron con :
+CPU:AMD Ryzen 2600x
+RAM: 16 gb 3200 hz
+Sistema Operativo: Windows 10
+Version de Java: Version 8
+*/
 
