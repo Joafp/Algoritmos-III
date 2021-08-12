@@ -1,3 +1,4 @@
+
 public class Ejercicio1_U3 {
     public static void main(String [] args){
         BST<String> t = new BST<>();
@@ -13,6 +14,10 @@ public class Ejercicio1_U3 {
         if ( k != null )
             System.out.println("\nSi existe!! " + k);
         else
-            System.out.println("No existe!!");     
+            System.out.println("No existe!!");
+        Iterable<String> aux=t.iteratorClaves("barco", "mesa");
+        for (String s:aux){
+            System.out.printf("%s ", s);
+        }
     }
 }
