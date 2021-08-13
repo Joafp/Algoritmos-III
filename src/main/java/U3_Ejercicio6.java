@@ -6,7 +6,9 @@ public class U3_Ejercicio6 {
             t.agregar(v[i]);
         }
         t.imprimir();
+        System.out.println(t.conthojas());
         t.eliminar("Alo");
         t.imprimir();
+        
     }
 }
