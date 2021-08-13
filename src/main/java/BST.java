@@ -227,7 +227,23 @@ public class BST<T extends Comparable>
          priv_imprimir (n_actual.der);
       }
    }
-   
+    public int conthojas(){
+        return private_conthojas(raiz);
+    }
+   private int private_conthojas(NodoBST aux){
+       int cantidad=0;
+        if (aux.izq==null && aux.izq==null){
+           cantidad=1;
+        }else{
+            if (aux.izq!=null){
+                cantidad=cantidad+private_conthojas(aux.izq);
+            }
+            if (aux.der!=null){
+                cantidad=cantidad+private_conthojas(aux.der);
+            }
+        }
+        return cantidad;
+   }
 
    private NodoBST priv_buscar (NodoBST n_actual, T dato)
    {
