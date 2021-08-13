@@ -17,7 +17,9 @@ public class BST<T extends Comparable>
         }
    }  
    private NodoBST raiz = null;
-
+   public NodoBST getraiz(){
+       return this.raiz;
+   }
 
    /* Agregar un dato al arbol */ 
    public void agregar (T dato)
@@ -150,23 +152,45 @@ public class BST<T extends Comparable>
         
    }
    //encontrar el sucesor
-    public NodoBST encontrarsucesor(NodoBST n){
-        NodoBST aux=raiz;
-        if (n.der!=null){
-           return valorminimo(n.der); 
+    public T encontrarsucesor(NodoBST n,NodoBST suce,T dato){
+        NodoBST aux=private_encontrarsucesor(n,suce,dato);
+        return aux.dato;
+    }
+    private NodoBST private_encontrarsucesor(NodoBST n,NodoBST suce,T dato){
+        if (n==null){
+            return suce;
         }
-        NodoBST sucesor=null;
-        while (aux!=null){
-            if (n.dato.compareTo(aux.dato)<0){
-                sucesor=aux;
-                aux=aux.getizq();
-            }else if(n.dato.compareTo(aux.dato)>0){
-                aux=aux.getder();
-            }else{
-                break;
+        if (n.dato.compareTo(dato)==0){
+            if (n.der!=null){
+                return valorminimo(n.der);
             }
+        }else if(dato.compareTo(n.dato)<0){
+            suce=n;
+            return private_encontrarsucesor(n.izq,suce,dato);
+        }else{
+            return private_encontrarsucesor(n.der,suce,dato);
         }
-       return sucesor;
+        return suce;    
+    }
+    public T encontrarpredecesor(NodoBST n,NodoBST prede,T dato){
+        NodoBST aux=private_encontrarpredecesor(n,prede,dato);
+        return aux.dato;
+    }
+    public NodoBST private_encontrarpredecesor(NodoBST n,NodoBST prede,T dato){
+            if (n==null){
+                return prede;
+            }
+            if (n.dato.compareTo(dato)==0){
+                if (n.izq!=null){
+                    return valormaximo(n.izq);
+                }
+            }else if(dato.compareTo(n.dato)<0){
+                return private_encontrarpredecesor(n.izq,prede,dato);
+            }else{
+                prede=n;
+                return private_encontrarpredecesor(n.der,prede,dato);
+            }
+            return prede; 
     }
     private NodoBST valorminimo(NodoBST n){
         NodoBST aux=n;
@@ -174,6 +198,12 @@ public class BST<T extends Comparable>
             aux=aux.izq;
         }
         return aux;
+    }
+    private NodoBST valormaximo(NodoBST n){
+        while(n.der!=null){
+            n=n.getder();
+        }
+        return n;
     }
     //Agregar recursivo
    private NodoBST priv_agregar (NodoBST n_actual, T dato)
