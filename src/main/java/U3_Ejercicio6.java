@@ -1,3 +1,4 @@
+//Integrantes Joaquin Delgado, Carlos Ayala
 public class U3_Ejercicio6 {
     public static void main (String []arg){
         Integer [] v={21,10,71,15,13,16,71,28};
@@ -7,6 +8,7 @@ public class U3_Ejercicio6 {
         }
         t.imprimir();
         System.out.println(t.conthojas());
+        t.eliminar(15);
         t.imprimir();
         System.out.println(t.encontrarsucesor(t.getraiz(),null,10));
         
